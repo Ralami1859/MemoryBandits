@@ -44,9 +44,9 @@ def	STS_updateArmModel(alphas, betas, ArmToPlay, reward, alpha0, beta0, gainGlob
 	K = np.size(alphas,1)
 	gainGlobalSTS = np.append(gainGlobalSTS, reward)
 	if reward == 1:
-		alphas[:,ArmToPlay] += 1;
+		alphas[:,ArmToPlay] += 1
 	else:
-		betas[:,ArmToPlay] += 1;
+		betas[:,ArmToPlay] += 1
 	alphas = np.vstack([alpha0*np.ones((1,K)),alphas]) #Expert Newly created put at prior
 	betas = np.vstack([beta0*np.ones((1,K)),betas])
 	return alphas, betas, gainGlobalSTS
